@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5e98e792-d80b-4310-b4d3-fc93b341cff1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env.production" beforeDir="false" afterPath="$PROJECT_DIR$/client/.env.production" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.firebaserc" beforeDir="false" afterPath="$PROJECT_DIR$/client/.firebaserc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/client/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarnrc" beforeDir="false" afterPath="$PROJECT_DIR$/client/.yarnrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/continuous_deployment/before_install.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/continuous_deployment/bs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/continuous_deployment/bs_test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/continuous_deployment/build.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/continuous_deployment/deploy.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase/database.rules.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase/firestore.indexes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase/firestore.rules" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase/storage.rules" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/auth/onCreate.f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/auth/onDelete.f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/db/admins/onWrite.f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/db/publicChats/onCreate.f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/db/roleGrants/onWrite.f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/db/roles/onWrite.f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/db/triggers/onCreate.f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/db/userChatMessages/onCreate.f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/db/userChatMessages/onUpdate.f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/db/userGrants/onWrite.f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/db/userRoles/onWrite.f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/db/usersCount/onDelete.f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/storage/onFinalize.f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/storage/thumbnails.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/utils/customClaims.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/android-chrome-192x192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/android-chrome-512x512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/browserconfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/firebase-messaging-sw.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mstile-150x150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/rmw.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/safari-pinned-tab.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/score.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Forms/Company.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Forms/Task.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/firebase.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/grants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/locales/bs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/locales/de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/locales/en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/locales/es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/locales/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/locales/ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/menuItems.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/routes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/themes/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/About/About.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/About/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/About/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Companies/Companies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Companies/Company.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Dashboard/Dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Dashboard/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LandingPage/LandingPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LandingPage/bs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LandingPage/de.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LandingPage/en.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LandingPage/es.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LandingPage/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LandingPage/ru.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Tasks/Task.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Tasks/Tasks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="799" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="shopaids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shopaids" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/client" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e98e792-d80b-4310-b4d3-fc93b341cff1" name="Default Changelist" comment="" />
+      <created>1586532468627</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586532468627</updated>
+      <workItem from="1586532471188" duration="630000" />
+      <workItem from="1586539104776" duration="252000" />
+      <workItem from="1586539469648" duration="5000" />
+      <workItem from="1586539493299" duration="207000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1094000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="799" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19097957" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32956153" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32956153" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24947146" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.env.production">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/LandingPage/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.yarnrc">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.test.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/init.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-780" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Tasks/Task.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#91#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Tasks/Tasks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Forms/Company.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Forms/Task.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/firebase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/menuItems.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2427">
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/locales/bs.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/.env.production">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="28" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
