@@ -1,6 +1,5 @@
 # ShopAid
-Social network for tenders
-
+An app to help you get essentials efficiently and sustainably using collective intelligence
 
 [Server] Python (Flask)
 
