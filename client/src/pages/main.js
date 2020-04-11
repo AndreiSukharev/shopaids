@@ -11,7 +11,7 @@ export default () => {
         <TextField id="standard-basic" label="Login" />
       </form>
       <form noValidate autoComplete="off">
-        <TextField id="filled-basic" label="Password" />
+        <TextField id="filled-basic" label="Password" type="password" />
       </form>
       <Button variant="contained" color="primary" component={Link} to="/shopaids/home">
         Sign In
