@@ -13,7 +13,7 @@ export default () => {
       <form noValidate autoComplete="off">
         <TextField id="filled-basic" label="Password" />
       </form>
-      <Button variant="contained" color="primary" component={Link} to="/home">
+      <Button variant="contained" color="primary" component={Link} to="/shopaids/home">
         Sign In
       </Button>
     </div>

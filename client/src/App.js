@@ -20,11 +20,11 @@ function App() {
       <Router history={history}>
         <div className="App">
           <div className="page-content">
-            <Route exact path='/' component={MainPage}/>
-            <Route exact path='/home' component={Home}/>
-            <Route exact path='/stores' component={ShopsMapPage}/>
-            <Route exact path='/list' component={ShoppingList}/>
-            <Route exact path='/profile' component={Profile}/>
+            <Route exact path='/shopaids' component={MainPage}/>
+            <Route exact path='/shopaids/home' component={Home}/>
+            <Route exact path='/shopaids/stores' component={ShopsMapPage}/>
+            <Route exact path='/shopaids/list' component={ShoppingList}/>
+            <Route exact path='/shopaids/profile' component={Profile}/>
           </div>
           <Header/>
         </div>
