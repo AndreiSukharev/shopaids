@@ -5,7 +5,6 @@ import { GitHubIcon } from 'rmw-shell/lib/components/Icons'
 import { Activity } from 'rmw-shell'
 import ReactMarkdown from 'react-markdown'
 import Scrollbar from 'rmw-shell/lib/components/Scrollbar/Scrollbar'
-import README from './README.md'
 
 require('github-markdown-css')
 
@@ -17,14 +16,6 @@ class About extends Component {
     this.state = {
       text: ''
     }
-  }
-
-  componentWillMount() {
-    fetch(README)
-      .then(response => response.text())
-      .then(text => {
-        this.setState({ text: text })
-      })
   }
 
   render() {
