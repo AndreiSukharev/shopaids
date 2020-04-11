@@ -40,46 +40,48 @@ export default class ShopsMapPage extends React.Component {
       <div>
         <ShopsMap markers={this.state.shops} ref={this.map}/>
         <div className="bottom-curtain">
-          {this.state.shops.map(s => {
-            return (
-              <div className="bottom-curtain-list-item" onClick={() => this.selectShop(s)}>
-                <div style={{flexGrow: 1}}>
-                  <div>
-                    <Typography variant="body1">{s.name}</Typography>
+          <div className="bottom-curtain-content">
+            {this.state.shops.map(s => {
+              return (
+                <div className="bottom-curtain-list-item" onClick={() => this.selectShop(s)}>
+                  <div style={{flexGrow: 1}}>
+                    <div>
+                      <Typography variant="body1">{s.name}</Typography>
+                    </div>
+                    <div>
+                      <Typography color="textSecondary" variant="caption">{s.workTime}</Typography>
+                    </div>
+                    <div>
+                      <Typography color="textSecondary" variant="caption">{s.address}</Typography>
+                    </div>
+                    <div>
+                      <Typography color="textSecondary" variant="caption">Crowd:</Typography>
+                      {s.crowd.map((cv) => (
+                        <div style={{
+                          marginLeft: 1,
+                          width: 2,
+                          height: cv * 2,
+                          display: 'inline-block',
+                          backgroundColor: `rgb(${cv*30}, ${255 - cv*50}, 20)`
+                        }}/>
+                      ))}
+                    </div>
                   </div>
                   <div>
-                    <Typography color="textSecondary" variant="caption">{s.workTime}</Typography>
-                  </div>
-                  <div>
-                    <Typography color="textSecondary" variant="caption">{s.address}</Typography>
-                  </div>
-                  <div>
-                    <Typography color="textSecondary" variant="caption">Crowd:</Typography>
-                    {s.crowd.map((cv) => (
-                      <div style={{
-                        marginLeft: 1,
-                        width: 2,
-                        height: cv * 2,
-                        display: 'inline-block',
-                        backgroundColor: `rgb(${cv*30}, ${255 - cv*50}, 20)`
-                      }}/>
-                    ))}
+                    <div>
+                      <Typography color="textSecondary" variant="caption">Travel time</Typography>
+                      <Typography color="secondary">{s.travelTime}</Typography>
+                    </div>
+                    <Divider/>
+                    <div>
+                      <Typography color="textSecondary" variant="caption">Availability</Typography>
+                      <Typography color="secondary">{s.inStock}</Typography>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div>
-                    <Typography color="textSecondary" variant="caption">Travel time</Typography>
-                    <Typography color="secondary">{s.travelTime}</Typography>
-                  </div>
-                  <Divider/>
-                  <div>
-                    <Typography color="textSecondary" variant="caption">Availability</Typography>
-                    <Typography color="secondary">{s.inStock}</Typography>
-                  </div>
-                </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
       </div>
     )

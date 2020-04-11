@@ -52,7 +52,6 @@ html, body, #root, .App {
 }
 
 .bottom-curtain {
-  padding: 16px;
   overflow-y: auto;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
@@ -63,6 +62,10 @@ html, body, #root, .App {
   width: 90%;
   left: 5%;
   box-shadow: 0px -1px 7px rgba(66, 66, 66, 0.25);
+}
+
+.bottom-curtain-content{
+  padding: 16px;
 }
 
 .bottom-curtain-list-item {
