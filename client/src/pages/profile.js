@@ -58,6 +58,7 @@ export default function SimpleList() {
         </CardContent>
         <CardActions>
           <Button size="small">Monique Ho</Button>
+          <Button size="small">Level 1 | Points 10</Button>
         </CardActions>
       </Card>
 
