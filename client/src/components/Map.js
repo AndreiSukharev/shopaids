@@ -1,8 +1,9 @@
-import React from 'react';
-import { compose, withProps } from "recompose"
-import { GoogleMap, Marker, withScriptjs, withGoogleMap } from "react-google-maps"
+import React from 'react'
+import { compose, withProps } from 'recompose'
+import UserIcon from '@material-ui/icons/Face'
+import { GoogleMap, Marker, withScriptjs, withGoogleMap, Polyline } from 'react-google-maps'
 
-export class ShopsMap extends React.Component{
+export class ShopsMap extends React.Component {
   render() {
     return (
       <GoogleMap
@@ -11,8 +12,12 @@ export class ShopsMap extends React.Component{
         defaultCenter={{ lat: 51.522114, lng: -0.157575 }}
       >
         {this.props.markers && this.props.markers.map(marker => (
-          <Marker position={{ lat: marker.lat, lng: marker.lng }} />
+          <Marker position={{ lat: marker.lat, lng: marker.lng }} label="S" options={{}}/>
         ))}
+        {this.props.userPosition && (
+          <Marker position={this.props.userPosition} label="me"/>
+        )}
+        {this.props.route && <Polyline path={this.props.route} options={{ strokeColor: '#E25F3E' }}/>}
       </GoogleMap>
     )
   }
@@ -20,13 +25,13 @@ export class ShopsMap extends React.Component{
 
 const WrappedMap = compose(
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
-    loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `100%` }} />,
-    mapElement: <div style={{ height: `100%` }} />,
+    googleMapURL: 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places',
+    loadingElement: <div style={{ height: `100%` }}/>,
+    containerElement: <div style={{ height: `100%` }}/>,
+    mapElement: <div style={{ height: `100%` }}/>,
   }),
   withScriptjs,
   withGoogleMap
 )(ShopsMap)
 
-export default React.forwardRef(({...props}, ref) => <WrappedMap {...props} forwardedRef={ref} />);
+export default React.forwardRef(({ ...props }, ref) => <WrappedMap {...props} forwardedRef={ref}/>)

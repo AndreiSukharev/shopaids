@@ -18,6 +18,10 @@ class ShopsMapPage extends React.Component {
   state = {
     selectedShop: null,
     showCurtain: true,
+    userPosition: {
+      lat: 51.521114,
+      lng: -0.157275,
+    },
     shops: [
       {
         lat: 51.522114,
@@ -51,6 +55,7 @@ class ShopsMapPage extends React.Component {
     this.setState({
       selectedShop: null,
       showCurtain: false,
+      route: [this.state.selectedShop, this.state.userPosition]
     })
   }
 
@@ -61,7 +66,12 @@ class ShopsMapPage extends React.Component {
   render() {
     return (
       <div>
-        <ShopsMap markers={this.state.shops} ref={this.mapRef}/>
+        <ShopsMap
+          markers={this.state.shops}
+          userPosition={this.state.userPosition}
+          ref={this.mapRef}
+          route={this.state.route}
+        />
         <div className={classnames("bottom-curtain", {'bottom-curtain_hidden': !this.state.showCurtain})}>
           <div className="bottom-curtain-handle" onClick={this.toggleCurtain}/>
           <div className="bottom-curtain-content">
