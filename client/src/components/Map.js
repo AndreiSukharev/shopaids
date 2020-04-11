@@ -11,8 +11,8 @@ export class ShopsMap extends React.Component {
         defaultZoom={15}
         defaultCenter={{ lat: 51.522114, lng: -0.157575 }}
       >
-        {this.props.markers && this.props.markers.map(marker => (
-          <Marker position={{ lat: marker.lat, lng: marker.lng }} label="S" options={{}}/>
+        {this.props.markers && this.props.markers.map((marker, i) => (
+          <Marker position={{ lat: marker.lat, lng: marker.lng }} {'s' + i} options={{}}/>
         ))}
         {this.props.userPosition && (
           <Marker position={this.props.userPosition} label="me"/>
