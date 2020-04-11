@@ -35,8 +35,9 @@ export default function CheckboxesGroup() {
 
   return (
     <div className={classes.root}>
+      <h2>What items do you want to buy?</h2>
       <FormControl component="fieldset" className={classes.formControl} >
-        <FormLabel  component="legend">What items do you want to buy?</FormLabel>
+        {/*<FormLabel  component="legend"></FormLabel>*/}
         <FormGroup>
           <FormControlLabel
             control={<Checkbox color="primary" checked={milk} onChange={handleChange} name="milk" />}

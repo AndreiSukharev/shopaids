@@ -34,7 +34,7 @@ export default function SimpleBottomNavigation() {
         >
             <BottomNavigationAction component={Link} label="Home" to="/home" icon={<HomeIcon/>}/>
             <BottomNavigationAction label="Stores" component={Link} to="/stores" icon={<FavoriteIcon/>}/>
-            <BottomNavigationAction component={Link} label="Lists" to="/lists" icon={<ListAltIcon/>}/>
+            <BottomNavigationAction component={Link} label="List" to="/list" icon={<ListAltIcon/>}/>
             <BottomNavigationAction component={Link} label="Profile" to="/profile" icon={<PersonIcon/>}/>
         </BottomNavigation>
     )
