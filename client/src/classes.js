@@ -4,7 +4,7 @@ const useStyles = makeStyles((theme) => ({
   m: {
     margin: 16
   },
-  p: {
+  padded: {
     padding: 16
   },
   verticalFlex: {

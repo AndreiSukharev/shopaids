@@ -1,12 +1,23 @@
 import * as React from 'react'
+import classnames from 'classnames'
 import ShopsMap from '../components/Map'
-import { Typography } from '@material-ui/core'
+import { Typography, withStyles } from '@material-ui/core'
 import Divider from '@material-ui/core/Divider'
+import Dialog from '@material-ui/core/Dialog'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogActions from '@material-ui/core/DialogActions'
+import Paper from '@material-ui/core/Paper'
+import Button from '@material-ui/core/Button'
+import { Link } from 'react-router-dom'
 
-export default class ShopsMapPage extends React.Component {
-  map = React.createRef();
+class ShopsMapPage extends React.Component {
+  mapRef = (c) => {
+    if (c) this.map = c
+  }
 
   state = {
+    selectedShop: null,
+    showCurtain: true,
     shops: [
       {
         lat: 51.522114,
@@ -31,20 +42,33 @@ export default class ShopsMapPage extends React.Component {
     ]
   }
 
-  selectShop = () => {
-    console.log(this.map.googleMap);
+  selectShop = (selectedShop) => {
+    this.setState({ selectedShop })
+  }
+
+  focusesSelectedStore = () => {
+    this.map.panTo(this.state.selectedShop)
+    this.setState({
+      selectedShop: null,
+      showCurtain: false,
+    })
+  }
+
+  toggleCurtain = () => {
+    this.setState({ showCurtain: !this.state.showCurtain })
   }
 
   render() {
     return (
       <div>
-        <ShopsMap markers={this.state.shops} ref={this.map}/>
-        <div className="bottom-curtain">
+        <ShopsMap markers={this.state.shops} ref={this.mapRef}/>
+        <div className={classnames("bottom-curtain", {'bottom-curtain_hidden': !this.state.showCurtain})}>
+          <div className="bottom-curtain-handle" onClick={this.toggleCurtain}/>
           <div className="bottom-curtain-content">
             {this.state.shops.map(s => {
               return (
                 <div className="bottom-curtain-list-item" onClick={() => this.selectShop(s)}>
-                  <div style={{flexGrow: 1}}>
+                  <div style={{ flexGrow: 1 }}>
                     <div>
                       <Typography variant="body1">{s.name}</Typography>
                     </div>
@@ -62,7 +86,7 @@ export default class ShopsMapPage extends React.Component {
                           width: 2,
                           height: cv * 2,
                           display: 'inline-block',
-                          backgroundColor: `rgb(${cv*30}, ${255 - cv*50}, 20)`
+                          backgroundColor: `rgb(${cv * 30}, ${255 - cv * 50}, 20)`
                         }}/>
                       ))}
                     </div>
@@ -83,7 +107,26 @@ export default class ShopsMapPage extends React.Component {
             })}
           </div>
         </div>
+        {this.state.selectedShop && (
+          <Dialog open onClose={() => this.selectShop(null)}>
+            <DialogContent>
+              <Typography variant="subtitle1">Are you at this store now?</Typography> <br/>
+              <Paper>
+                <div style={{ padding: 16 }}>
+                  <Typography variant="body1">{this.state.selectedShop.name}</Typography>
+                  <Typography variant="caption" color="textSecondary">{this.state.selectedShop.address}</Typography>
+                </div>
+              </Paper>
+            </DialogContent>
+            <DialogActions>
+              <Button color="primary" variant="outlined" onClick={this.focusesSelectedStore}>no</Button>
+              <Button color="primary" variant="contained" component={Link} to="/list">yes</Button>
+            </DialogActions>
+          </Dialog>
+        )}
       </div>
     )
   }
 }
+
+export default ShopsMapPage
