@@ -33,12 +33,10 @@ export default function SimpleBottomNavigation() {
             showLabels
             className={classes.root}
         >
-            <Router>
-                <BottomNavigationAction component={Link} label="Home" to="/home" icon={<HomeIcon/>}/>
-                <BottomNavigationAction label="Stores" component={Link} to="/stores" icon={<FavoriteIcon/>}/>
-                <BottomNavigationAction component={Link} label="Lists" to="/lists" icon={<ListAltIcon/>}/>
-                <BottomNavigationAction component={Link} label="Profile" to="/profile" icon={<PersonIcon/>}/>
-            </Router>
+            <BottomNavigationAction component={Link} label="Home" to="/home" icon={<HomeIcon/>}/>
+            <BottomNavigationAction label="Stores" component={Link} to="/stores" icon={<FavoriteIcon/>}/>
+            <BottomNavigationAction component={Link} label="Lists" to="/lists" icon={<ListAltIcon/>}/>
+            <BottomNavigationAction component={Link} label="Profile" to="/profile" icon={<PersonIcon/>}/>
         </BottomNavigation>
     )
 }
