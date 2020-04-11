@@ -31,15 +31,15 @@ export default function CheckboxesGroup() {
       <FormGroup className={[classes.formGroup, classes.flexItemMain]}>
         <FormControlLabel
           control={<Checkbox color="primary" checked={milk} onChange={handleChange} name="milk" />}
-          label="Milk"
+          label="Eggs"
         />
         <FormControlLabel
           control={<Checkbox color="primary" checked={bread} onChange={handleChange} name="bread" />}
-          label="Bread"
+          label="Pasta"
         />
         <FormControlLabel
           control={<Checkbox color="primary" checked={paper} onChange={handleChange} name="paper" />}
-          label="Toilet paper"
+          label="Toilet rolls"
         />
       </FormGroup>
 

@@ -45,7 +45,7 @@ export default function CheckboxesGroup() {
 
       <Paper className={[classes.flexItemMain]}>
         <div>
-          {['Milk', 'Bread', 'Toilet paper'].map(product => (
+          {['Eggs', 'Pasta', 'Toilet rolls'].map(product => (
             <FormGroup className={classes.formGroup}>
               <div className={classes.flex}>
                 <FormControlLabel
