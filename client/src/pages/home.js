@@ -5,6 +5,8 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
+import Button from '@material-ui/core/Button';
+import Checkbox from '@material-ui/core/Checkbox';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -87,6 +89,17 @@ export default function NativeSelects() {
         </Select>
       </FormControl>
 
+      <div>
+        <Checkbox
+          defaultChecked
+          color="primary"
+          inputProps={{ 'aria-label': 'secondary checkbox' }}
+        />
+        Save this list for future
+        <Button variant="contained" color="primary">
+          Continue
+        </Button>
+      </div>
     </div>
   );
 }
