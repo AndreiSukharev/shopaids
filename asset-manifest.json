@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/AndreiSukharev/shopaids/static/css/main.72913935.chunk.css",
-    "main.js": "/AndreiSukharev/shopaids/static/js/main.13b0f653.chunk.js",
-    "main.js.map": "/AndreiSukharev/shopaids/static/js/main.13b0f653.chunk.js.map",
-    "runtime-main.js": "/AndreiSukharev/shopaids/static/js/runtime-main.61606874.js",
-    "runtime-main.js.map": "/AndreiSukharev/shopaids/static/js/runtime-main.61606874.js.map",
-    "static/js/2.92ff403d.chunk.js": "/AndreiSukharev/shopaids/static/js/2.92ff403d.chunk.js",
-    "static/js/2.92ff403d.chunk.js.map": "/AndreiSukharev/shopaids/static/js/2.92ff403d.chunk.js.map",
-    "index.html": "/AndreiSukharev/shopaids/index.html",
-    "precache-manifest.40d13ac98876806b03411dc910e556f9.js": "/AndreiSukharev/shopaids/precache-manifest.40d13ac98876806b03411dc910e556f9.js",
-    "service-worker.js": "/AndreiSukharev/shopaids/service-worker.js",
-    "static/css/main.72913935.chunk.css.map": "/AndreiSukharev/shopaids/static/css/main.72913935.chunk.css.map",
-    "static/js/2.92ff403d.chunk.js.LICENSE.txt": "/AndreiSukharev/shopaids/static/js/2.92ff403d.chunk.js.LICENSE.txt"
+    "main.css": "/shopaids/static/css/main.72913935.chunk.css",
+    "main.js": "/shopaids/static/js/main.c890b92f.chunk.js",
+    "main.js.map": "/shopaids/static/js/main.c890b92f.chunk.js.map",
+    "runtime-main.js": "/shopaids/static/js/runtime-main.864ef602.js",
+    "runtime-main.js.map": "/shopaids/static/js/runtime-main.864ef602.js.map",
+    "static/js/2.92ff403d.chunk.js": "/shopaids/static/js/2.92ff403d.chunk.js",
+    "static/js/2.92ff403d.chunk.js.map": "/shopaids/static/js/2.92ff403d.chunk.js.map",
+    "index.html": "/shopaids/index.html",
+    "precache-manifest.9a69af751b09df54c50323f70bb8804b.js": "/shopaids/precache-manifest.9a69af751b09df54c50323f70bb8804b.js",
+    "service-worker.js": "/shopaids/service-worker.js",
+    "static/css/main.72913935.chunk.css.map": "/shopaids/static/css/main.72913935.chunk.css.map",
+    "static/js/2.92ff403d.chunk.js.LICENSE.txt": "/shopaids/static/js/2.92ff403d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.61606874.js",
+    "static/js/runtime-main.864ef602.js",
     "static/js/2.92ff403d.chunk.js",
     "static/css/main.72913935.chunk.css",
-    "static/js/main.13b0f653.chunk.js"
+    "static/js/main.c890b92f.chunk.js"
   ]
 }
