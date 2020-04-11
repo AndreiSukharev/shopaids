@@ -16,7 +16,6 @@ import {
 
 const useStyles = makeStyles({
     root: {
-        width: 500,
     },
 });
 
