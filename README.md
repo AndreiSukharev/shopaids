@@ -24,19 +24,19 @@ https://docs.docker.com/compose/install/
 The second one:
 ```
 brew install docker docker-machine docker-compose
-docker-machine create --driver virtualbox QSoft
-eval $(docker-machine env QSoft)
+docker-machine create --driver virtualbox Shopaids
+eval $(docker-machine env Shopaids)
 ```
 
 ## Build and Run
 
 ```
-git clone https://github.com/Masyaka/shopaids shopaids
+git clone https://github.com/AndreiSukharev/shopaids shopaids
 cd shopaids
 docker-compose up --build
 cd client
 npm i
-npm run serve
+npm run start
 go to: http://localhost:8080
 ```
 
