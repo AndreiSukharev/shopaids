@@ -3,6 +3,7 @@ import { Route, Router } from 'react-router-dom'
 import './App.css';
 import Header from './components/Header'
 import MainPage from './pages/main'
+import ShoppingList from './pages/ShoppingList'
 import { createBrowserHistory } from 'history'
 import ShopsMapPage from './pages/ShopsMapPage'
 import Home from './pages/home'
@@ -16,9 +17,9 @@ function App() {
       <div className="App">
         <div className="page-content">
           <Route exact path='/' component={MainPage}/>
-          <Route exact path='/shopping-list' component={MainPage}/>
           <Route exact path='/home' component={Home}/>
           <Route exact path='/stores' component={ShopsMapPage}/>
+          <Route exact path='/list' component={ShoppingList}/>
         </div>
         <Header/>
       </div>
