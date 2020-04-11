@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header'
 import { ThemeProvider } from '@material-ui/styles'
 import MainPage from './pages/main'
+import Profile from './pages/profile'
 import ShoppingList from './pages/ShoppingList'
 import { createBrowserHistory } from 'history'
 import ShopsMapPage from './pages/ShopsMapPage'
@@ -23,6 +24,7 @@ function App() {
             <Route exact path='/home' component={Home}/>
             <Route exact path='/stores' component={ShopsMapPage}/>
             <Route exact path='/list' component={ShoppingList}/>
+            <Route exact path='/profile' component={Profile}/>
           </div>
           <Header/>
         </div>

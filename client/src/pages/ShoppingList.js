@@ -94,7 +94,7 @@ export default function CheckboxesGroup() {
       </Paper>
 
       <div className={classes.m}>
-        <Button variant="contained" color="primary" component={Link} to="/stores" fullWidth>
+        <Button variant="contained" color="primary" component={Link} to="/profile" fullWidth>
           Done
         </Button>
       </div>
