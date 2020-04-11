@@ -1,8 +1,14 @@
-import App from 'rmw-shell'
-import React from 'react'
-import config from './config'
-import configureStore from './store'
+import React from 'react';
+// import './App.css';
+import Header from "./components/Header";
 
-const Main = () => <App appConfig={{ configureStore, ...config }} />
+function App() {
+    return (
 
-export default Main
+        <div className="App">
+            <Header></Header>
+        </div>
+    );
+}
+
+export default App;
