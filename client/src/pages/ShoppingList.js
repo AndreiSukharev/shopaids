@@ -45,7 +45,7 @@ export default function CheckboxesGroup() {
 
       <Paper className={[classes.flexItemMain]}>
         <div>
-          {['Eggs', 'Pasta', 'Toilet rolls'].map(product => (
+          {['Eggs', 'Pasta', 'Toilet rolls'].map((product, goodNumber) => (
             <FormGroup className={classes.formGroup}>
               <div className={classes.flex}>
                 <FormControlLabel
@@ -53,7 +53,7 @@ export default function CheckboxesGroup() {
                   control={<Checkbox color="primary" checked={state[product]} onChange={handleChange} name={product}/>}
                   label={product}
                 />
-                <TextField id={`${product}-qty`} label="Qty" size="small"/>
+                <TextField id={`${product}-qty`} value={`${goodNumber + 1}`} label="Qty" size="small"/>
               </div>
               <div>
                 <Typography color="textSecondary" variant="caption">Indicate stock level for this item</Typography>
