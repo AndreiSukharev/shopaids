@@ -27,21 +27,21 @@ class ShopsMapPage extends React.Component {
         lat: 51.522114,
         lng: -0.157575,
         name: 'Tesco Superstore',
-        travelTime: 139,
+        travelTime: 10,
         workTime: 'Open Now | Closes 10:00PM',
         address: '15 Great Suffolk St',
         crowd: [3, 4, 5, 9, 7, 8],
-        inStock: '3/5',
+        inStock: '3/3',
       },
       {
         lat: 51.513117,
         lng: -0.157235,
         name: 'Giddy Grocer',
-        travelTime: 1203,
+        travelTime: 23,
         workTime: 'Open Now | Closes 7:00PM',
         address: '27 Well St, Hackney',
         crowd: [3, 4, 5, 2, 1, 0],
-        inStock: '5/5',
+        inStock: '1/3',
       }
     ]
   }
@@ -104,7 +104,7 @@ class ShopsMapPage extends React.Component {
                   <div>
                     <div>
                       <Typography color="textSecondary" variant="caption">Travel time</Typography>
-                      <Typography color="secondary">{s.travelTime}</Typography>
+                      <Typography color="secondary">{s.travelTime} min</Typography>
                     </div>
                     <Divider/>
                     <div>
