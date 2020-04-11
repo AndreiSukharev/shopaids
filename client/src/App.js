@@ -12,7 +12,7 @@ import Home from './pages/home'
 import theme from './theme'
 
 const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href')
-const history = createBrowserHistory({ basename: baseUrl })
+export const history = createBrowserHistory({ basename: baseUrl })
 
 function App() {
   return (
