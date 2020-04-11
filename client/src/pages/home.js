@@ -8,16 +8,8 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom'
-
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(3),
-  },
-  buttonCustom: {
-    borderRadius: 3,
-    color: "primary",
-  }
-}));
+import { Typography } from '@material-ui/core'
+import useStyles from '../classes'
 
 export default function CheckboxesGroup() {
   const classes = useStyles();
@@ -34,36 +26,32 @@ export default function CheckboxesGroup() {
   const { milk, bread, paper } = state;
 
   return (
-    <div className={classes.root}>
-      <h2>What items do you want to buy?</h2>
-      <FormControl component="fieldset" className={classes.formControl} >
-        {/*<FormLabel  component="legend"></FormLabel>*/}
-        <FormGroup>
-          <FormControlLabel
-            control={<Checkbox color="primary" checked={milk} onChange={handleChange} name="milk" />}
-            label="Milk"
-          />
-          <FormControlLabel
-            control={<Checkbox color="primary" checked={bread} onChange={handleChange} name="bread" />}
-            label="Bread"
-          />
-          <FormControlLabel
-            control={<Checkbox color="primary" checked={paper} onChange={handleChange} name="paper" />}
-            label="Toilet paper"
-          />
-        </FormGroup>
-        {/*<FormHelperText>Be careful</FormHelperText>*/}
-      </FormControl>
+    <div className={[classes.verticalFlex]}>
+      <h2><Typography color="" variant="h5">What items do you want to buy?</Typography></h2>
+      <FormGroup className={[classes.formGroup, classes.flexItemMain]}>
+        <FormControlLabel
+          control={<Checkbox color="primary" checked={milk} onChange={handleChange} name="milk" />}
+          label="Milk"
+        />
+        <FormControlLabel
+          control={<Checkbox color="primary" checked={bread} onChange={handleChange} name="bread" />}
+          label="Bread"
+        />
+        <FormControlLabel
+          control={<Checkbox color="primary" checked={paper} onChange={handleChange} name="paper" />}
+          label="Toilet paper"
+        />
+      </FormGroup>
 
-      <div>
+      <FormGroup className={classes.formGroup}>
+        <Button variant="contained" color="primary" component={Link} to="/stores">
+          Continue
+        </Button>
         <FormControlLabel
           control={<Checkbox  color="primary" onChange={handleChange} name="checkedA" />}
           label="Save this list for future"
         />
-        <Button variant="contained" color="primary" component={Link} to="/stores">
-          Continue
-        </Button>
-      </div>
+      </FormGroup>
     </div>
   );
 }

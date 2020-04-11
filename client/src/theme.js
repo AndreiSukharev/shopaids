@@ -15,6 +15,18 @@ export default createMuiTheme({
     },
     background: {
       paper: 'rgba(250, 248, 248, 0.92)'
+    },
+  },
+  overrides: {
+    MuiButton: {
+      root: {
+        borderRadius: 30
+      }
+    },
+    MuiButtonBase: {
+      root: {
+        borderRadius: 30
+      }
     }
-  }
+  },
 })
