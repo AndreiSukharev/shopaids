@@ -64,10 +64,24 @@ html, body, #root, .App {
   width: 90%;
   left: 5%;
   box-shadow: 0px -1px 7px rgba(66, 66, 66, 0.25);
+  transition: bottom .3s ease-in-out;
+}
+
+.bottom-curtain_hidden{
+  bottom: -55%;
 }
 
 .bottom-curtain-content{
   padding: 16px;
+}
+
+.bottom-curtain-handle{
+  margin: 8px auto 0;
+  width: 56px;
+  height: 8px;
+
+  background: #C4C4C4;
+  border-radius: 22px;
 }
 
 .bottom-curtain-list-item {
