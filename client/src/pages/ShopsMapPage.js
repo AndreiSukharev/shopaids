@@ -26,7 +26,7 @@ class ShopsMapPage extends React.Component {
       {
         lat: 51.513117,
         lng: -0.157235,
-        name: 'S1 Giddy Grocer',
+        name: 'S2 Giddy Grocer',
         travelTime: 10,
         workTime: 'Open Now | Closes 7:00PM',
         address: '27 Well St, Hackney',
@@ -36,7 +36,7 @@ class ShopsMapPage extends React.Component {
       {
         lat: 51.522114,
         lng: -0.157575,
-        name: 'S2 Tesco Superstore',
+        name: 'S1 Tesco Superstore',
         travelTime: 23,
         workTime: 'Open Now | Closes 10:00PM',
         address: '15 Great Suffolk St',

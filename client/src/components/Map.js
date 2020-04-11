@@ -12,7 +12,7 @@ export class ShopsMap extends React.Component {
         defaultCenter={{ lat: 51.522114, lng: -0.157575 }}
       >
         {this.props.markers && this.props.markers.map((marker, i) => (
-          <Marker position={{ lat: marker.lat, lng: marker.lng }} {'s' + i} options={{}}/>
+          <Marker position={{ lat: marker.lat, lng: marker.lng }} label={'s' + (i + 1)} options={{}}/>
         ))}
         {this.props.userPosition && (
           <Marker position={this.props.userPosition} label="me"/>
