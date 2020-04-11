@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import RestoreIcon from '@material-ui/icons/Restore';
+import HomeIcon from '@material-ui/icons/Home';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
+import ListAltIcon from '@material-ui/icons/ListAlt';
+import PersonIcon from '@material-ui/icons/Person';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,19 +14,31 @@ import {
   Link
 } from "react-router-dom";
 
-export default class Header extends Component{
-  render() {
+const useStyles = makeStyles({
+  root: {
+    width: 500,
+  },
+});
 
-    return (
-      <BottomNavigation
-        showLabels
-      >
-        <Router>
-          <BottomNavigationAction component={Link} label="Recents"  to="/Recents" icon={<RestoreIcon />} />
-          <BottomNavigationAction label="Favorites" component={Link}  to="/Favorites" icon={<FavoriteIcon />} />
-          <BottomNavigationAction component={Link} label="Nearby" to="/Nearby" icon={<LocationOnIcon />} />
-        </Router>
-      </BottomNavigation>
-    )
-  }
+export default function SimpleBottomNavigation() {
+  const classes = useStyles();
+  const [value, setValue] = React.useState(0);
+
+  return (
+    <BottomNavigation
+      value={value}
+      onChange={(event, newValue) => {
+        setValue(newValue);
+      }}
+      showLabels
+      className={classes.root}
+    >
+      <Router>
+        <BottomNavigationAction component={Link} label="Home" to="/home" icon={<HomeIcon/>}/>
+        <BottomNavigationAction label="Stores" component={Link} to="/stores" icon={<FavoriteIcon/>}/>
+        <BottomNavigationAction component={Link} label="Lists" to="/lists" icon={<ListAltIcon/>}/>
+        <BottomNavigationAction component={Link} label="Profile" to="/profile" icon={<PersonIcon/>}/>
+      </Router>
+    </BottomNavigation>
+  )
 }
