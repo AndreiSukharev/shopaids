@@ -91,7 +91,7 @@ function Login() {
             name="login"
             autoComplete="login"
             autoFocus
-            helperText="Enter: test"
+            helperText="Password: test"
           />
           <TextField
             onChange={event => updatePassword(event.target.value)}
@@ -105,7 +105,7 @@ function Login() {
             type="password"
             id="password"
             autoComplete="current-password"
-            helperText="Enter: test"
+            helperText="Password: test"
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary"/>}
