@@ -1,15 +1,15 @@
 import superagent from 'superagent'
 
 export const profiles = {
-  'driving-car': 'driving-car',
-  'driving-hgv': 'driving-hgv',
-  'cycling-regular': 'cycling-regular',
-  'cycling-road': 'cycling-road',
-  'cycling-mountain': 'cycling-mountain',
-  'cycling-electric': 'cycling-electric',
-  'foot-walking': 'foot-walking',
-  'foot-hiking': 'foot-hiking',
-  'wheelchair': 'wheelchair',
+  drivingCar: 'driving-car',
+  drivingHgv: 'driving-hgv',
+  cyclingRegular: 'cycling-regular',
+  cyclingRoad: 'cycling-road',
+  cyclingMountain: 'cycling-mountain',
+  cyclingElectric: 'cycling-electric',
+  footWalking: 'foot-walking',
+  footHiking: 'foot-hiking',
+  wheelchair: 'wheelchair',
 }
 
 export default class DirectionsService {
