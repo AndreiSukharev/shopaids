@@ -47,12 +47,16 @@ class ShopsMapPage extends React.Component {
       lat: s.lat,
       lng: s.lon,
       name: s.tags.name,
-      travelTime: 'x',
       workTime: s.tags.opening_hours,
       address: [s.tags['addr:city'], s.tags['addr:housenumber'], s.tags['addr:street']].filter(s => !!s).join(' '),
       crowd: [3, 4, 5, 2, 1, 0],
       inStock: 'x',
     }))
+    shops.forEach( s => {
+      // eslint-disable-next-line no-undef
+      const distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(this.state.userPosition.lat, this.state.userPosition.lng), new google.maps.LatLng(s.lat, s.lng));
+      s.travelTime = Math.floor(distance * 2 / 100)
+    })
     this.setState({ shops })
   }, 5000)
 
