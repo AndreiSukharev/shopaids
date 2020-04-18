@@ -3,7 +3,7 @@ import { Route, Router } from 'react-router-dom'
 import './App.css';
 import Header from './components/Header'
 import { ThemeProvider } from '@material-ui/styles'
-import MainPage from './pages/main'
+import Login from './pages/Login'
 import Profile from './pages/profile'
 import ShoppingList from './pages/ShoppingList'
 import { createBrowserHistory } from 'history'
@@ -20,11 +20,11 @@ function App() {
       <Router history={history}>
         <div className="App">
           <div className="page-content">
-            <Route exact path='/shopaids' component={MainPage}/>
-            <Route exact path='/shopaids/home' component={Home}/>
-            <Route exact path='/shopaids/stores' component={ShopsMapPage}/>
-            <Route exact path='/shopaids/list' component={ShoppingList}/>
-            <Route exact path='/shopaids/profile' component={Profile}/>
+            <Route exact path='/shopaid' component={Login}/>
+            <Route exact path='/shopaid/home' component={Home}/>
+            <Route exact path='/shopaid/stores' component={ShopsMapPage}/>
+            <Route exact path='/shopaid/list' component={ShoppingList}/>
+            <Route exact path='/shopaid/profile' component={Profile}/>
           </div>
           <Header/>
         </div>
