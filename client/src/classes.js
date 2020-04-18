@@ -8,8 +8,10 @@ const useStyles = makeStyles((theme) => ({
     padding: 16
   },
   verticalFlex: {
+    marginTop: theme.spacing(6),
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   flex: {
     display: 'flex',

@@ -59,7 +59,7 @@ function Login() {
       setTimeout(() => {
         toast.success('You are logged in')
         history.push(`/shopaid/home`)
-      }, 1000)
+      }, 1500)
     } else {
       toast.error('Incorrect login or password')
     }

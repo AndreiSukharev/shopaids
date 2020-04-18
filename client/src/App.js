@@ -10,7 +10,7 @@ import { createBrowserHistory } from 'history'
 import ShopsMapPage from './pages/ShopsMapPage'
 import Home from './pages/home'
 import theme from './theme'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href')
 export const history = createBrowserHistory({ basename: baseUrl })
