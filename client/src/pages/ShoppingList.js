@@ -1,6 +1,4 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import FormLabel from '@material-ui/core/FormLabel'
 import FormControl from '@material-ui/core/FormControl'
 import Divider from '@material-ui/core/Divider'
 import FormGroup from '@material-ui/core/FormGroup'
@@ -41,8 +39,8 @@ export default function CheckboxesGroup() {
   let history = useHistory();
 
   return (
-    <div className={[classes.verticalFlex, classes.p]}>
-      <h2><Typography color="" variant="h5">Shopping List</Typography></h2>
+    <div className={ classes.verticalFlex}>
+    <h2><Typography color="" variant="h5">Shopping List</Typography></h2>
       <form noValidate>
         <TextField
           id="date"

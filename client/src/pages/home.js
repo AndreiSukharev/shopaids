@@ -1,8 +1,4 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import FormLabel from '@material-ui/core/FormLabel'
-import FormControl from '@material-ui/core/FormControl'
-import Divider from '@material-ui/core/Divider'
 import FormGroup from '@material-ui/core/FormGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Paper from '@material-ui/core/Paper'
@@ -10,8 +6,6 @@ import Checkbox from '@material-ui/core/Checkbox'
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
 import TextField from '@material-ui/core/TextField'
-import Radio from '@material-ui/core/Radio'
-import RadioGroup from '@material-ui/core/RadioGroup'
 import { Typography } from '@material-ui/core'
 import useStyles from '../classes'
 
@@ -28,7 +22,7 @@ export default function CheckboxesGroup() {
   }
 
   return (
-    <div className={[classes.verticalFlex, classes.p]}>
+    <div className={ classes.verticalFlex}>
       <h2><Typography color="" variant="h5">What items do you want to buy?</Typography></h2>
 
       <Paper className={[classes.flexItemMain]}>

@@ -11,12 +11,23 @@ import ShopsMapPage from './pages/ShopsMapPage'
 import Home from './pages/home'
 import theme from './theme'
 import DirectionsService from './services/DirectionsService'
+import { toast } from 'react-toastify';
 
 const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href')
 export const history = createBrowserHistory({ basename: baseUrl })
 export const services = {
   directions: new DirectionsService('5b3ce3597851110001cf6248b4ac97fac7864337817642a060af17d1'),
 }
+
+toast.configure({
+  position: "bottom-right",
+  autoClose: 2000,
+  hideProgressBar: true,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  //etc you get the idea
+});
 
 function App() {
   return (

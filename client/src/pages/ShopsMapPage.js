@@ -1,7 +1,7 @@
 import * as React from 'react'
 import classnames from 'classnames'
 import ShopsMap from '../components/Map'
-import { Typography, withStyles } from '@material-ui/core'
+import { Typography } from '@material-ui/core'
 import Divider from '@material-ui/core/Divider'
 import Dialog from '@material-ui/core/Dialog'
 import DialogContent from '@material-ui/core/DialogContent'
