@@ -35,6 +35,18 @@ class ShopsMapPage extends React.Component {
     })
   }
 
+  distanceMultipliers = {
+    'driving-car': .5,
+    'driving-hgv': .5,
+    'cycling-regular': 1,
+    'cycling-road': 1,
+    'cycling-mountain': 1,
+    'cycling-electric': 1,
+    'foot-walking': 2,
+    'foot-hiking': 2,
+    'wheelchair': 3,
+  }
+
   onMapMove = debounce(async () => {
     if (this.map.getZoom() < 12) return
 
@@ -45,6 +57,7 @@ class ShopsMapPage extends React.Component {
       westernmost: bounds.west,
       easternmost: bounds.east
     })
+    const products = useContext(Context)
     const shops = shopsData.map(s => ({
       id: s.id,
       lat: s.lat,
@@ -58,8 +71,8 @@ class ShopsMapPage extends React.Component {
     shops.forEach( s => {
       // eslint-disable-next-line no-undef
       const distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(this.state.userPosition.lat, this.state.userPosition.lng), new google.maps.LatLng(s.lat, s.lng));
-      s.travelTime = Math.floor(distance * 2 / 100)
-      s.inStock = Math.floor(Math.random() * Math.floor(products.length)) + "/" + products.length
+      s.inStock = Math.floor(Math.random() * Math.floor(products.length)) + "/" + products.length;
+      s.travelTime = Math.floor(distance * this.distanceMultipliers[this.state.profile] / 100);
     })
     this.setState({ shops })
   }, 5000)
@@ -79,6 +92,7 @@ class ShopsMapPage extends React.Component {
   }
 
   state = {
+    profile: services.directions.profiles.drivingCar,
     selectedShop: null,
     showCurtain: true,
     userPosition: {
@@ -94,7 +108,7 @@ class ShopsMapPage extends React.Component {
 
   focusesSelectedStore = async () => {
     this.map.panTo(this.state.selectedShop)
-    const routeToShop = await services.directions.getRoute(profiles['driving-car'], this.state.userPosition, this.state.selectedShop)
+    const routeToShop = await services.directions.getRoute(this.state.profile, this.state.userPosition, this.state.selectedShop)
     this.setState({
       selectedShop: null,
       showCurtain: false,
