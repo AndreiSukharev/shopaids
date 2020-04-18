@@ -1,22 +1,26 @@
 {
   "files": {
-    "main.css": "/shopaids/static/css/main.77d4e783.chunk.css",
-    "main.js": "/shopaids/static/js/main.4776c959.chunk.js",
-    "main.js.map": "/shopaids/static/js/main.4776c959.chunk.js.map",
-    "runtime-main.js": "/shopaids/static/js/runtime-main.864ef602.js",
-    "runtime-main.js.map": "/shopaids/static/js/runtime-main.864ef602.js.map",
-    "static/js/2.3b7b7c0d.chunk.js": "/shopaids/static/js/2.3b7b7c0d.chunk.js",
-    "static/js/2.3b7b7c0d.chunk.js.map": "/shopaids/static/js/2.3b7b7c0d.chunk.js.map",
-    "index.html": "/shopaids/index.html",
-    "precache-manifest.1ac574d925d5ae8066cff130794cd26a.js": "/shopaids/precache-manifest.1ac574d925d5ae8066cff130794cd26a.js",
-    "service-worker.js": "/shopaids/service-worker.js",
-    "static/css/main.77d4e783.chunk.css.map": "/shopaids/static/css/main.77d4e783.chunk.css.map",
-    "static/js/2.3b7b7c0d.chunk.js.LICENSE.txt": "/shopaids/static/js/2.3b7b7c0d.chunk.js.LICENSE.txt"
+    "main.css": "/shopaid/static/css/main.bed88b16.chunk.css",
+    "main.js": "/shopaid/static/js/main.da20f448.chunk.js",
+    "main.js.map": "/shopaid/static/js/main.da20f448.chunk.js.map",
+    "runtime-main.js": "/shopaid/static/js/runtime-main.5caa607a.js",
+    "runtime-main.js.map": "/shopaid/static/js/runtime-main.5caa607a.js.map",
+    "static/css/2.f42e59c9.chunk.css": "/shopaid/static/css/2.f42e59c9.chunk.css",
+    "static/js/2.fafed836.chunk.js": "/shopaid/static/js/2.fafed836.chunk.js",
+    "static/js/2.fafed836.chunk.js.map": "/shopaid/static/js/2.fafed836.chunk.js.map",
+    "index.html": "/shopaid/index.html",
+    "precache-manifest.1694361099e9389fdf73a5efc512065a.js": "/shopaid/precache-manifest.1694361099e9389fdf73a5efc512065a.js",
+    "service-worker.js": "/shopaid/service-worker.js",
+    "static/css/2.f42e59c9.chunk.css.map": "/shopaid/static/css/2.f42e59c9.chunk.css.map",
+    "static/css/main.bed88b16.chunk.css.map": "/shopaid/static/css/main.bed88b16.chunk.css.map",
+    "static/js/2.fafed836.chunk.js.LICENSE.txt": "/shopaid/static/js/2.fafed836.chunk.js.LICENSE.txt",
+    "static/media/shopaid-logo.png": "/shopaid/static/media/shopaid-logo.58b74084.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.864ef602.js",
-    "static/js/2.3b7b7c0d.chunk.js",
-    "static/css/main.77d4e783.chunk.css",
-    "static/js/main.4776c959.chunk.js"
+    "static/js/runtime-main.5caa607a.js",
+    "static/css/2.f42e59c9.chunk.css",
+    "static/js/2.fafed836.chunk.js",
+    "static/css/main.bed88b16.chunk.css",
+    "static/js/main.da20f448.chunk.js"
   ]
 }
