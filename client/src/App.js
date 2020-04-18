@@ -38,11 +38,11 @@ function App() {
         <div className="App">
           <div className="page-content">
             <Context.Provider value={products}>
-              <Route exact path='/shopaids' component={Login}/>
-              <Route exact path='/shopaid/home' component={Home}/>
-              <Route exact path='/shopaid/stores' component={ShopsMapPage}/>
-              <Route exact path='/shopaid/list' component={ShoppingList}/>
-              <Route exact path='/shopaid/profile' component={Profile}/>
+              <Route exact path='/' component={Login}/>
+              <Route exact path='/shopaids/home' component={Home}/>
+              <Route exact path='/shopaids/stores' component={ShopsMapPage}/>
+              <Route exact path='/shopaids/list' component={ShoppingList}/>
+              <Route exact path='/shopaids/profile' component={Profile}/>
             </Context.Provider>
           </div>
           <Header/>
