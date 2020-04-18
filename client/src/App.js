@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route, Router } from 'react-router-dom'
 import './App.css';
 import Header from './components/Header'
@@ -20,12 +20,11 @@ toast.configure({
   autoClose: 2000,
   hideProgressBar: true,
   closeOnClick: true,
-  pauseOnHover: true,
-  draggable: true,
-  //etc you get the idea
 });
 
 function App() {
+
+
   return (
     <ThemeProvider theme={theme}>
       <Router history={history}>
