@@ -207,7 +207,7 @@ class ShopsMapPage extends React.Component {
             <DialogActions>
               <Button color="primary" variant="outlined" onClick={this.focusesSelectedStore}>find</Button>
               <Button color="primary" variant="outlined" onClick={() => this.selectShop(null)}>no</Button>
-              <Button color="primary" variant="contained" component={Link} to="/shopaid/list">yes</Button>
+              <Button color="primary" variant="contained" component={Link} to="/shopaids/list">yes</Button>
             </DialogActions>
           </Dialog>
         )}

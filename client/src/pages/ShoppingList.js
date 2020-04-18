@@ -105,7 +105,7 @@ export default function ShoppingList() {
       </div>
 
       {showPoints && (
-        <Dialog open onClose={() => history.push("/shopaid/profile")}>
+        <Dialog open onClose={() => history.push("/shopaids/profile")}>
           <DialogContent style={{textAlign: 'center'}}>
             <Typography variant="subtitle1"><strong>Thanks for helping other shoppers! <br/> Have a safe trip home!</strong></Typography>
             <svg width="174" height="117" viewBox="0 0 174 117" fill="none" xmlns="http://www.w3.org/2000/svg">

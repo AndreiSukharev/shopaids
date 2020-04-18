@@ -64,7 +64,7 @@ export default function Home() {
       </Paper>
 
       <div className={classes.m}>
-        <Button variant="contained" color="primary" component={Link} to="/shopaid/stores" fullWidth>
+        <Button variant="contained" color="primary" component={Link} to="/shopaids/stores" fullWidth>
           Continue
         </Button>
       </div>

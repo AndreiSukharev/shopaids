@@ -57,7 +57,7 @@ function Login() {
       updateLoading(true)
       setTimeout(() => {
         toast.success('You are logged in')
-        history.push(`/shopaid/home`)
+        history.push(`/shopaids/home`)
       }, 1500)
     } else {
       toast.error('Incorrect login or password')
