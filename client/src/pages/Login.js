@@ -91,7 +91,7 @@ function Login() {
             name="login"
             autoComplete="login"
             autoFocus
-            helperText="Password: test"
+            helperText="Login: test"
           />
           <TextField
             onChange={event => updatePassword(event.target.value)}
