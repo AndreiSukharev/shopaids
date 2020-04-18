@@ -15,6 +15,11 @@ import { profiles } from '../services/DirectionsService'
 import Context from "../context";
 import { useContext } from 'react'
 
+const ProductsAvailable = ()=> {
+  const products =  useContext(Context)
+  return Math.floor(Math.random() * Math.floor(products.length + 1)) + "/" + products.length;
+}
+// const products =  useContext(Context)
 
 class ShopsMapPage extends React.Component {
   componentDidMount() {
@@ -57,7 +62,6 @@ class ShopsMapPage extends React.Component {
       westernmost: bounds.west,
       easternmost: bounds.east
     })
-    const products = useContext(Context)
     const shops = shopsData.map(s => ({
       id: s.id,
       lat: s.lat,
@@ -71,11 +75,11 @@ class ShopsMapPage extends React.Component {
     shops.forEach( s => {
       // eslint-disable-next-line no-undef
       const distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(this.state.userPosition.lat, this.state.userPosition.lng), new google.maps.LatLng(s.lat, s.lng));
-      s.inStock = Math.floor(Math.random() * Math.floor(products.length)) + "/" + products.length;
+      // s.inStock = "";
       s.travelTime = Math.floor(distance * this.distanceMultipliers[this.state.profile] / 100);
     })
     this.setState({ shops })
-  }, 5000)
+  }, 3000)
 
   findShopsInBox = async (box) => {
     return await services.shops.getShops(box)
@@ -184,7 +188,7 @@ class ShopsMapPage extends React.Component {
                     <Divider/>
                     <div>
                       <Typography color="textSecondary" variant="caption">Availability</Typography>
-                      <Typography color="secondary">{s.inStock}</Typography>
+                      <Typography color="secondary"><ProductsAvailable/></Typography>
                     </div>
                   </div>
                 </div>
