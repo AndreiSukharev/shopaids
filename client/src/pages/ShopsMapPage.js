@@ -1,4 +1,5 @@
 import * as React from 'react'
+import debounce from 'lodash/debounce'
 import classnames from 'classnames'
 import ShopsMap from '../components/Map'
 import { Typography } from '@material-ui/core'
@@ -14,17 +15,52 @@ import { profiles } from '../services/DirectionsService'
 
 class ShopsMapPage extends React.Component {
   componentDidMount() {
-    setTimeout(() => this.panToUser(), 300);
+    setTimeout(() => this.panToUser(), 1000);
   }
 
   panToUser = () => {
     window.navigator.geolocation.getCurrentPosition((pos) => {
-      this.map.panTo({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+      this.setState({ userPosition: {
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude,
+      }}, () => {
+        this.map.panTo(this.state.userPosition);
+      })
+      this.onMapMove()
     });
   };
 
+  onMapMove = debounce(async () => {
+    if(this.map.getZoom() < 12) return;
+
+    const bounds = this.map.getBounds().toJSON();
+    const shopsData = await this.findShopsInBox({ southernmost: bounds.south, northernmost: bounds.north, westernmost: bounds.west, easternmost: bounds.east })
+    const shops = shopsData.map(s => ({
+      id: s.id,
+      lat: s.lat,
+      lng: s.lon,
+      name: s.tags.name,
+      travelTime: 'x',
+      workTime: s.tags.opening_hours,
+      address: [s.tags['addr:city'], s.tags['addr:housenumber'], s.tags['addr:street']].filter(s => !!s).join(' '),
+      crowd: [3, 4, 5, 2, 1, 0],
+      inStock: 'x',
+    }));
+    this.setState({ shops })
+  }, 500);
+
+  findShopsInBox = async (box) => {
+    return await services.shops.getShops(box)
+  }
+
   mapRef = (c) => {
-    if (c) this.map = c
+    if (c) {
+      if (!this.map) {
+        c.context.__SECRET_MAP_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.addListener('bounds_changed', this.onMapMove)
+
+      }
+      this.map = c
+    }
   }
 
   state = {
@@ -34,28 +70,7 @@ class ShopsMapPage extends React.Component {
       lat: 51.521114,
       lng: -0.157275,
     },
-    shops: [
-      {
-        lat: 51.513117,
-        lng: -0.157235,
-        name: 'S2 Giddy Grocer',
-        travelTime: 10,
-        workTime: 'Open Now | Closes 7:00PM',
-        address: '27 Well St, Hackney',
-        crowd: [3, 4, 5, 2, 1, 0],
-        inStock: '3/3',
-      },
-      {
-        lat: 51.522114,
-        lng: -0.157575,
-        name: 'S1 Tesco Superstore',
-        travelTime: 23,
-        workTime: 'Open Now | Closes 10:00PM',
-        address: '15 Great Suffolk St',
-        crowd: [3, 4, 5, 9, 7, 8],
-        inStock: '2/3',
-      },
-    ]
+    shops: []
   }
 
   selectShop = (selectedShop) => {
@@ -76,10 +91,25 @@ class ShopsMapPage extends React.Component {
     this.setState({ showCurtain: !this.state.showCurtain })
   }
 
+  containerStyle = {
+    overflow: 'hidden',
+    position: 'relative',
+  }
+
+  onMarkerClick = (marker) => {
+    const div = document.getElementById(this.getShopDOMId(marker));
+    div.scrollIntoView();
+    div.classList.remove('flash')
+    setTimeout(() => div.classList.add('flash'), 100)
+  }
+
+  getShopDOMId = (s) => 'shop-' + s.id
+
   render() {
     return (
-      <div>
+      <div style={this.containerStyle}>
         <ShopsMap
+          onMarkerCLick={this.onMarkerClick}
           markers={this.state.shops}
           userPosition={this.state.userPosition}
           ref={this.mapRef}
@@ -88,9 +118,9 @@ class ShopsMapPage extends React.Component {
         <div className={classnames("bottom-curtain", {'bottom-curtain_hidden': !this.state.showCurtain})}>
           <div className="bottom-curtain-handle" onClick={this.toggleCurtain}/>
           <div className="bottom-curtain-content">
-            {this.state.shops.map(s => {
+            {this.state.shops.map((s, i) => {
               return (
-                <div className="bottom-curtain-list-item" onClick={() => this.selectShop(s)}>
+                <div key={i} className="bottom-curtain-list-item" onClick={() => this.selectShop(s)} id={this.getShopDOMId(s)}>
                   <div style={{ flexGrow: 1 }}>
                     <div>
                       <Typography variant="body1">{s.name}</Typography>
@@ -103,8 +133,8 @@ class ShopsMapPage extends React.Component {
                     </div>
                     <div>
                       <Typography color="textSecondary" variant="caption">Crowd:</Typography>
-                      {s.crowd.map((cv) => (
-                        <div style={{
+                      {s.crowd.map((cv, i) => (
+                        <div key={i} style={{
                           marginLeft: 1,
                           width: 2,
                           height: cv * 2,
@@ -142,7 +172,8 @@ class ShopsMapPage extends React.Component {
               </Paper>
             </DialogContent>
             <DialogActions>
-              <Button color="primary" variant="outlined" onClick={this.focusesSelectedStore}>no</Button>
+              <Button color="primary" variant="outlined" onClick={this.focusesSelectedStore}>find</Button>
+              <Button color="primary" variant="outlined" onClick={() => this.selectShop(null)}>no</Button>
               <Button color="primary" variant="contained" component={Link} to="/shopaid/list">yes</Button>
             </DialogActions>
           </Dialog>
