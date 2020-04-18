@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {
-  Avatar, Box, Button,
+  Box, Button,
   Checkbox,
   Container,
   CssBaseline,
@@ -10,11 +10,10 @@ import {
   CircularProgress
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import { useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
+import Logo from "./shopaid-logo.png"
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -77,12 +76,7 @@ function Login() {
       <CssBaseline/>
       {loadingIcon}
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon/>
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Login
-        </Typography>
+        <img src={Logo} width="200em"></img>
         <form className={classes.form} noValidate onSubmit={signIn}>
 
           <TextField

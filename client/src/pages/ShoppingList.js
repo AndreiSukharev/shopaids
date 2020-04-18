@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import FormControl from '@material-ui/core/FormControl'
 import Divider from '@material-ui/core/Divider'
 import FormGroup from '@material-ui/core/FormGroup'
@@ -15,26 +15,13 @@ import useStyles from '../classes'
 import Dialog from '@material-ui/core/Dialog'
 import DialogContent from '@material-ui/core/DialogContent'
 
-export default function CheckboxesGroup() {
-  const classes = useStyles()
-  const [state, setState] = React.useState({
-    milk: false,
-    bread: false,
-    paper: false,
-  })
+import Context from "../context";
 
-  const [productsStock, setProductsStock] = React.useState({
-  })
+export default function ShoppingList() {
+  const classes = useStyles()
 
   const [showPoints, setShowPoints] = React.useState(false)
-
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked })
-  }
-
-  const setStockChanged = (product) => {
-    setProductsStock({ ...productsStock, [product]: true })
-  }
+  const products = useContext(Context)
 
   let history = useHistory();
 
@@ -47,7 +34,6 @@ export default function CheckboxesGroup() {
           label="Date"
           type="date"
           defaultValue="2020-04-11"
-          // className={classes.textField}
           InputLabelProps={{
             shrink: true,
           }}
@@ -56,25 +42,23 @@ export default function CheckboxesGroup() {
 
       <Paper className={[classes.flexItemMain]}>
         <div>
-          {['Eggs', 'Pasta', 'Toilet rolls'].map((product, goodNumber) => (
+          {products.map((product) => (
             <FormGroup className={classes.formGroup}>
               <div className={classes.flex}>
                 <FormControlLabel
                   className={classes.flexItemMain}
-                  control={<Checkbox color="primary" checked={state[product]} onChange={handleChange} name={product}/>}
-                  label={product}
+                  control={<Checkbox color="primary" name={product.name}/>}
+                  label={product.name}
                 />
-                <TextField id={`${product}-qty`} value={`${goodNumber + 1}`} label="Qty" size="small"/>
+                <TextField id={`${product.qty + 1}-qty`} value={`${product.qty}`} label="Qty" size="small"/>
               </div>
               <div>
                 <Typography color="textSecondary" variant="caption">Indicate stock level for this item</Typography>
                 <FormControl component="fieldset">
-                  {/*<FormLabel component="legend">Indicate stock level for this item</FormLabel>*/}
                   <RadioGroup
                     row
                     aria-label="position"
-                    name={`${product}-stock`}
-                    onChange={() => {setStockChanged(product)}}
+                    name={`${product.name}-stock`}
                   >
                     <FormControlLabel
                       value="0"
