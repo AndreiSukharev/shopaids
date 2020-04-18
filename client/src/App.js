@@ -38,7 +38,7 @@ function App() {
         <div className="App">
           <div className="page-content">
             <Context.Provider value={products}>
-              <Route exact path='/shopaid' component={Login}/>
+              <Route exact path='/shopaids' component={Login}/>
               <Route exact path='/shopaid/home' component={Home}/>
               <Route exact path='/shopaid/stores' component={ShopsMapPage}/>
               <Route exact path='/shopaid/list' component={ShoppingList}/>
