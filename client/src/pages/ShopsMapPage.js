@@ -9,8 +9,20 @@ import DialogActions from '@material-ui/core/DialogActions'
 import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
+import { services } from '../App';
+import { profiles } from '../services/DirectionsService'
 
 class ShopsMapPage extends React.Component {
+  componentDidMount() {
+    setTimeout(() => this.panToUser(), 300);
+  }
+
+  panToUser = () => {
+    window.navigator.geolocation.getCurrentPosition((pos) => {
+      this.map.panTo({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+    });
+  };
+
   mapRef = (c) => {
     if (c) this.map = c
   }
@@ -50,12 +62,13 @@ class ShopsMapPage extends React.Component {
     this.setState({ selectedShop })
   }
 
-  focusesSelectedStore = () => {
-    this.map.panTo(this.state.selectedShop)
+  focusesSelectedStore = async () => {
+    this.map.panTo(this.state.selectedShop);
+    const routeToShop = await services.directions.getRoute(profiles['driving-car'], this.state.userPosition, this.state.selectedShop)
     this.setState({
       selectedShop: null,
       showCurtain: false,
-      route: [this.state.selectedShop, this.state.userPosition]
+      route: routeToShop.features[0].geometry.coordinates.map(c => ({ lat: c[1], lng: c[0] }))
     })
   }
 
