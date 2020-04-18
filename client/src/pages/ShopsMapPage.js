@@ -10,31 +10,38 @@ import DialogActions from '@material-ui/core/DialogActions'
 import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
-import { services } from '../App';
+import { services } from '../App'
 import { profiles } from '../services/DirectionsService'
 
 class ShopsMapPage extends React.Component {
   componentDidMount() {
-    setTimeout(() => this.panToUser(), 1000);
+    setTimeout(() => this.panToUser(), 1000)
   }
 
   panToUser = () => {
     window.navigator.geolocation.getCurrentPosition((pos) => {
-      this.setState({ userPosition: {
+      this.setState({
+        userPosition: {
           lat: pos.coords.latitude,
           lng: pos.coords.longitude,
-      }}, () => {
-        this.map.panTo(this.state.userPosition);
+        }
+      }, () => {
+        this.map.panTo(this.state.userPosition)
       })
       this.onMapMove()
-    });
-  };
+    })
+  }
 
   onMapMove = debounce(async () => {
-    if(this.map.getZoom() < 12) return;
+    if (this.map.getZoom() < 12) return
 
-    const bounds = this.map.getBounds().toJSON();
-    const shopsData = await this.findShopsInBox({ southernmost: bounds.south, northernmost: bounds.north, westernmost: bounds.west, easternmost: bounds.east })
+    const bounds = this.map.getBounds().toJSON()
+    const shopsData = await this.findShopsInBox({
+      southernmost: bounds.south,
+      northernmost: bounds.north,
+      westernmost: bounds.west,
+      easternmost: bounds.east
+    })
     const shops = shopsData.map(s => ({
       id: s.id,
       lat: s.lat,
@@ -45,9 +52,9 @@ class ShopsMapPage extends React.Component {
       address: [s.tags['addr:city'], s.tags['addr:housenumber'], s.tags['addr:street']].filter(s => !!s).join(' '),
       crowd: [3, 4, 5, 2, 1, 0],
       inStock: 'x',
-    }));
+    }))
     this.setState({ shops })
-  }, 500);
+  }, 500)
 
   findShopsInBox = async (box) => {
     return await services.shops.getShops(box)
@@ -78,7 +85,7 @@ class ShopsMapPage extends React.Component {
   }
 
   focusesSelectedStore = async () => {
-    this.map.panTo(this.state.selectedShop);
+    this.map.panTo(this.state.selectedShop)
     const routeToShop = await services.directions.getRoute(profiles['driving-car'], this.state.userPosition, this.state.selectedShop)
     this.setState({
       selectedShop: null,
@@ -97,10 +104,12 @@ class ShopsMapPage extends React.Component {
   }
 
   onMarkerClick = (marker) => {
-    const div = document.getElementById(this.getShopDOMId(marker));
-    div.scrollIntoView();
-    div.classList.remove('flash')
-    setTimeout(() => div.classList.add('flash'), 100)
+    this.setState({ showCurtain: true }, () => {
+      const div = document.getElementById(this.getShopDOMId(marker))
+      div.scrollIntoView()
+      div.classList.remove('flash');
+      setTimeout(() => div.classList.add('flash'), 100);
+    })
   }
 
   getShopDOMId = (s) => 'shop-' + s.id
@@ -115,12 +124,13 @@ class ShopsMapPage extends React.Component {
           ref={this.mapRef}
           route={this.state.route}
         />
-        <div className={classnames("bottom-curtain", {'bottom-curtain_hidden': !this.state.showCurtain})}>
+        <div className={classnames('bottom-curtain', { 'bottom-curtain_hidden': !this.state.showCurtain })}>
           <div className="bottom-curtain-handle" onClick={this.toggleCurtain}/>
           <div className="bottom-curtain-content">
             {this.state.shops.map((s, i) => {
               return (
-                <div key={i} className="bottom-curtain-list-item" onClick={() => this.selectShop(s)} id={this.getShopDOMId(s)}>
+                <div key={i} className="bottom-curtain-list-item" onClick={() => this.selectShop(s)}
+                     id={this.getShopDOMId(s)}>
                   <div style={{ flexGrow: 1 }}>
                     <div>
                       <Typography variant="body1">{s.name}</Typography>
