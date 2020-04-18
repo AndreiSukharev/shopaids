@@ -11,6 +11,8 @@ import {
 import { makeStyles } from '@material-ui/core/styles'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import { useHistory } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Copyright() {
   return (
@@ -52,6 +54,7 @@ function Login() {
     e.preventDefault()
 
     if (login && password) {
+      toast("Wow so easy !");
       history.push(`/shopaid/home`);
     }
   }
