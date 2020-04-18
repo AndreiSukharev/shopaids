@@ -54,7 +54,7 @@ class ShopsMapPage extends React.Component {
       inStock: 'x',
     }))
     this.setState({ shops })
-  }, 500)
+  }, 5000)
 
   findShopsInBox = async (box) => {
     return await services.shops.getShops(box)
