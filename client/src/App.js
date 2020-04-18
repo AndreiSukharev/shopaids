@@ -30,7 +30,7 @@ toast.configure({
 })
 
 function App() {
-  const [products, updateProducts] = useState([{name: "Milk", qty: 12}])
+  const [products, updateProducts] = useState([])
 
   return (
     <ThemeProvider theme={theme}>

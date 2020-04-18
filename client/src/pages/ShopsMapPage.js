@@ -170,7 +170,7 @@ class ShopsMapPage extends React.Component {
                         <div key={i} style={{
                           marginLeft: 1,
                           width: 2,
-                          height: cv * 2,
+                          height: Math.floor(Math.random(10) * Math.floor(10 + 1)),
                           display: 'inline-block',
                           backgroundColor: `rgb(${cv * 30}, ${255 - cv * 50}, 20)`
                         }}/>
