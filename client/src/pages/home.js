@@ -10,23 +10,21 @@ import { Typography } from '@material-ui/core'
 import useStyles from '../classes'
 
 import Context from "../context";
+import Logo from "./shopaid-logo.png"
 
 export default function Home() {
   const classes = useStyles()
   const products = useContext(Context)
   const [newProduct, updateNewProduct] = useState({name:"", qty: 1})
 
-  // function updateQty(val) {
-  //   updateNewProduct({name, qty: val})
-  // }
   function addProduct() {
-    // const prod = {name: newProduct, qty: 1}
     updateNewProduct({name:"", qty: 1})
     products.push(newProduct)
     // updateProducts(updateProducts)
   }
   return (
     <div className={ classes.verticalFlex}>
+      <img src={Logo} width="200em"></img>
       <h2><Typography color="" variant="h5">What items do you want to buy?</Typography></h2>
       <Paper className={[classes.flexItemMain]}>
         <div>

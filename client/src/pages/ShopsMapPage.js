@@ -12,12 +12,18 @@ import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
 import { services } from '../App';
 import { profiles } from '../services/DirectionsService'
+import Context from "../context";
+import { useContext } from 'react'
+
+const products = useContext(Context)
+// function getRandomInt(upperNumber) {
+//   return Math.floor(Math.random() * Math.floor(upperNumber));
+// }
 
 class ShopsMapPage extends React.Component {
   componentDidMount() {
     setTimeout(() => this.panToUser(), 1000);
   }
-
   panToUser = () => {
     window.navigator.geolocation.getCurrentPosition((pos) => {
       this.setState({ userPosition: {
@@ -35,6 +41,7 @@ class ShopsMapPage extends React.Component {
 
     const bounds = this.map.getBounds().toJSON();
     const shopsData = await this.findShopsInBox({ southernmost: bounds.south, northernmost: bounds.north, westernmost: bounds.west, easternmost: bounds.east })
+
     const shops = shopsData.map(s => ({
       id: s.id,
       lat: s.lat,
@@ -44,7 +51,7 @@ class ShopsMapPage extends React.Component {
       workTime: s.tags.opening_hours,
       address: [s.tags['addr:city'], s.tags['addr:housenumber'], s.tags['addr:street']].filter(s => !!s).join(' '),
       crowd: [3, 4, 5, 2, 1, 0],
-      inStock: 'x',
+      inStock: getRandomInt(products.length) + "/" + products.length,
     }));
     this.setState({ shops })
   }, 500);
@@ -52,6 +59,10 @@ class ShopsMapPage extends React.Component {
   findShopsInBox = async (box) => {
     return await services.shops.getShops(box)
   }
+
+  // getRandomInt = (upperNumber) =>{
+  //   return Math.floor(Math.random() * Math.floor(upperNumber));
+  // }
 
   mapRef = (c) => {
     if (c) {
