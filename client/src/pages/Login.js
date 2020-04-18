@@ -7,17 +7,18 @@ import {
   FormControlLabel, Grid, Link,
   TextField,
   Typography,
+  CircularProgress
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import { useHistory } from 'react-router-dom'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-        Copyright ©ShopAid {new Date().getFullYear()}
+      Copyright ©ShopAid {new Date().getFullYear()}
     </Typography>
   )
 }
@@ -47,22 +48,34 @@ function Login() {
 
   const [login, updateLogin] = useState('')
   const [password, updatePassword] = useState('')
-
-  const history = useHistory();
+  const [isLoading, updateLoading] = useState(false)
+  const validation = 'test'
+  const history = useHistory()
 
   function signIn(e) {
     e.preventDefault()
-
-    if (login && password) {
-      toast("Wow so easy !");
-      history.push(`/shopaid/home`);
+    if (login === validation && password === validation) {
+      updateLoading(true)
+      setTimeout(() => {
+        toast.success('You are logged in')
+        history.push(`/shopaid/home`)
+      }, 1000)
+    } else {
+      toast.error('Incorrect login or password')
     }
   }
 
+  let loadingIcon;
+  if (isLoading) {
+    loadingIcon = <CircularProgress />;
+  } else {
+    loadingIcon = "";
+  }
 
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline/>
+      {loadingIcon}
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon/>

@@ -10,9 +10,20 @@ import { createBrowserHistory } from 'history'
 import ShopsMapPage from './pages/ShopsMapPage'
 import Home from './pages/home'
 import theme from './theme'
+import { ToastContainer, toast } from 'react-toastify';
 
 const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href')
 export const history = createBrowserHistory({ basename: baseUrl })
+
+toast.configure({
+  position: "bottom-right",
+  autoClose: 2000,
+  hideProgressBar: true,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  //etc you get the idea
+});
 
 function App() {
   return (
